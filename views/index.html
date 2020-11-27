@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的博客</title>
+    <%- include('./layout/commonStyle.ejs') -%>
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.css">
+</head>
+<body>
+  <!-- 导航开始 -->
+    <%- include('./layout/nav.ejs') -%>
+  <!-- 导航结束 -->
+
+  <!-- 主要内容 -->
+  <main id="main">
+    <!-- 大块屏 -->
+    <div class="wrap-hreo-content">
+      <div class="hreo-content">
+        <h1>Dream</h1>
+        <span class="slogan">有志者，事竟成</span>
+      </div>
+      <div class="down">
+        <svg class="allow-right" width="30" height="30" fill="currentColor">
+          <use xlink:href="assets/svg/bootstrap-icons.svg#chevron-double-down"/>
+        </svg>
+      </div>
+    </div>
+    <!-- 大块屏结束 -->
+    
+    <!-- 关于 -->
+    <section id="about">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 p-0">
+            <div class="bg_about"></div>
+          </div>
+          <div class="col-sm-12 col-md-6 p-0">
+            <div class="owl-carousel">
+              <div class="item">
+                <div class="wrap-about">
+                  <div class="wrap-content">
+                    <p>
+                      设计是将形式和内容结合起来的方法。设计，就像艺术一样，有多个定义，
+                      没有单一的定义。设计可以是艺术。设计可以是美学。设计如此简单，
+                      这就是为什么它如此复杂的原因。
+                      <p style="text-align: right;font-style: italic;">—— 不明出处</p>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="wrap-about">
+                  <div class="wrap-content">
+                    <table class="w-content">
+                      <tbody><tr>
+                      <td class="title">Name </td>
+                      <td class="break">:</td>
+                      <td> Wangwei</td>
+                      </tr>
+                      <tr>
+                      <td class="title">Phone </td>
+                      <td class="break">:</td>
+                      <td> 0769-48597146</td>
+                      </tr>
+                      <tr>
+                      <td class="title">Email </td>
+                      <td class="break">:</td>
+                      <td> 2219444825@qq.com</td>
+                      </tr>
+                      <tr>
+                      <td class="title">Address </td>
+                      <td class="break">:</td>
+                      <td> 广东省东莞市</td>
+                      </tr>
+                    </tbody></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 关于结束 -->
+
+    <!-- 最新博文 -->
+    <section id="latest" class="grey-bg">
+      <div class="container-xl">
+        <div class="row">
+          <div class="col-md-3" style="padding-left: 30px;">
+            <h3 class="title-samll">
+              <span>最新博文</span>
+            </h3>
+            <p>
+              用心写好每一行代码，用时间和精力钻研每一项技术。沉淀知识，积累技术。
+            </p>
+          </div>
+          <div class="col-md-9 content-right pl-md-5">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="thumb-item-wrap border">
+                    <div class="content">
+                      <h4 class="thumb-title">浅析Vue源码</h4>
+                      <p class="date">2020-11-25</p>
+                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
+                      <hr>
+                      <p class="text-detail">
+                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
+                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
+                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
+                        做相应的更新，充分发挥电子书的优势。
+                      </p>
+                      <p class="more">
+                        <a href="#">阅读更多</a>
+                        <svg class="allow-right" width="20" height="20" fill="currentColor">
+                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="thumb-item-wrap border">
+                    <div class="content">
+                      <h4 class="thumb-title">浅析Vue源码</h4>
+                      <p class="date">2020-11-25</p>
+                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
+                      <hr>
+                      <p class="text-detail">
+                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
+                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
+                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
+                        做相应的更新，充分发挥电子书的优势。
+                      </p>
+                      <p class="more">
+                        <a href="#">阅读更多</a>
+                        <svg class="allow-right" width="20" height="20" fill="currentColor">
+                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="thumb-item-wrap border">
+                    <div class="content">
+                      <h4 class="thumb-title">浅析Vue源码</h4>
+                      <p class="date">2020-11-25</p>
+                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
+                      <hr>
+                      <p class="text-detail">
+                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
+                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
+                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
+                        做相应的更新，充分发挥电子书的优势。
+                      </p>
+                      <p class="more">
+                        <a href="#">阅读更多</a>
+                        <svg class="allow-right" width="20" height="20" fill="currentColor">
+                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-6">
+                  <div class="thumb-item-wrap border">
+                    <div class="content">
+                      <h4 class="thumb-title">浅析Vue源码</h4>
+                      <p class="date">2020-11-25</p>
+                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
+                      <hr>
+                      <p class="text-detail">
+                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
+                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
+                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
+                        做相应的更新，充分发挥电子书的优势。
+                      </p>
+                      <p class="more">
+                        <a href="#">阅读更多</a>
+                        <svg class="allow-right" width="20" height="20" fill="currentColor">
+                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                        </svg>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 最新博文结束 -->
+
+    <!-- 格言 -->
+    <section id="motto" style="background-image: url(assets/img/gugong.jpg);">
+        <div class="motto-item">
+          <p class="text">所有的科学都是错误先真理而生，错误在先比错误在后好</p>
+          <p class="author">————沃尔波斯</p>
+        </div>
+    </section>
+    <!-- 格言结束 -->
+
+    <!-- 前端要闻 -->
+    <section id="frontend-nwes">
+      <div class="container-xl">
+        <div class="row row-reverse">
+          <div class="col-md-9" style="padding-top: 10px;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">
+                          <svg class="allow-right" width="15" height="15" fill="currentColor">
+                            <use xlink:href="assets/svg/bootstrap-icons.svg#calendar4-week"/>
+                          </svg>
+                          2020-11-10
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">2020-11-10</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">2020-11-10</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">2020-11-10</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">2020-11-10</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <a href="#">
+                    <div class="thumb-item-wrap border">
+                      <div class="content p-3">
+                        <div class="img-box">
+                          <img src="assets/img/news.webp" alt="">
+                        </div>
+                        <h5 class="thumb-title signe-text">Angular 11 正式发布</h5>
+                        <p class="date">2020-11-10</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 d-md-flex flex-md-column align-items-md-end" style="padding-left: 30px;">
+            <h3 class="title-samll">
+              <span>前端要闻</span>
+            </h3>
+            <p>
+              关注前端圈子，保持对新鲜事物的好奇心和敏感度。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 前端要闻结束 -->
+  </main>
+
+  <!-- 底部 -->
+  <%- include('./layout/footer.ejs') -%>
+
+  <!-- 工具按钮 -->
+  <%- include('./components/toolGroup.ejs') -%>
+
+  <!-- 公共脚本 -->
+  <%- include('./layout/commonScript.ejs') -%>
+
+  <script src="assets/plugins/owl.carousel.min.js"></script>
+  <script src="js/index.js"></script>
+  
+</body>
+</html>

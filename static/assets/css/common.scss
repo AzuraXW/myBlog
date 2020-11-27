@@ -1,0 +1,221 @@
+p{
+    color: #555555;
+}
+*::selection{
+    background-color: pink;
+}
+
+input[type=search]::-webkit-search-cancel-button{
+    -webkit-appearance: none;  //此处去掉默认的小×
+}
+
+.navbar-toggler{
+    padding: 3px;
+    position: relative;
+    width: 30px;
+    height: 25px;
+    span{
+        display: block;
+        position: absolute;
+        height: 3px;
+        border-radius: 8px;
+        width: 30px;
+        background-color: rgb(172, 172, 172);
+        transition: all .2s linear;
+        &:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform-origin: center;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        &:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            transform-origin: center;
+
+        }
+    }
+    &.close{
+        height: 30px;
+        span{
+            &:first-child{
+                transform: rotateZ(-45deg);
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) rotateZ(-45deg);
+            }
+            &:nth-child(2){
+                display: none;
+            }
+            &:last-child{
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) rotateZ(45deg);
+            }
+        }
+    }
+}
+
+.bg-blur{
+    -webkit-box-shadow: 0 4px 30px rgba(0,0,0,.07);
+    box-shadow: 0 4px 30px rgba(0,0,0,.07);
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+    background-color: rgba(255,255,255,.6);
+}
+// 自定义导航样式
+#nav {
+    background-color: rgba(255, 255, 255, 0.6);
+    // box-shadow: 0 0px 13px -3px rgb(190, 190, 190);
+    .navbar-toggler{
+        border: none;
+        outline: none;
+    }
+    .search-box{
+        display: flex;
+        border-bottom: 2px solid coral;
+        padding: 5px;
+        .search-input{
+            border: 0;
+            margin: 0;
+            outline: none;
+            background: transparent;
+            padding: 0 5px;
+        }
+        .search-btn{
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+    }
+}
+
+// 标题
+.title-samll{
+    margin: 15px 0 20px 0;
+    position: relative;
+    width: max-content;
+    & + p {
+        margin-top: 30px;
+        margin-bottom: 45px;
+    }
+    span{
+        position: relative;
+        display: block;
+        padding: 10px;
+        &::after{
+            content: "";
+            position: absolute;
+            width: 110%;
+            height: 122%;
+            top: 0;
+            right: 0;
+            border-top: 1px solid coral;
+            border-right: 1px solid coral;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            height: 122%;
+            width: 110%;
+            bottom: 0;
+            left: 0;
+            border-bottom: 1px solid coral;
+            border-left: 1px solid coral;
+        }
+    }
+}
+.signe-text{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.more{
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    .allow-right{
+        vertical-align: middle;
+    }
+    a{
+        display: inline-block;
+        margin-left: auto;
+        position: relative;
+        color: #619ac3;
+        text-decoration: none;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0px;
+            width: 20px;
+            height: 3px;
+            background-color: pink;
+            transition: all .2s;
+        }
+        &:hover::after{
+            width: 123%;
+        }
+    }
+}
+
+.tool-group{
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .bg-music{
+        display: flex;
+        background-color: #252525;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        &:hover{
+            .music iframe{
+                width: 298px;
+            }
+        }
+        .music{
+            iframe{
+                width: 0;
+                transition: all .4s;
+            }
+        }
+    }
+    .btn{
+        background-color: #252525;
+        border-radius: 8px;
+        padding: 12px;
+        outline: none;
+        color: coral;
+        outline: none;
+        border: none;
+        &.goup{
+            bottom: 20px;
+            cursor: default;
+            transition: all .4s;
+            opacity: 0;
+            &.fadein{
+                transform: translateY(0);
+                opacity: 1;
+            }
+            &.fadeout{
+                transform: translateY(30px);
+                opacity: 0;
+            }
+        }
+        &.music{
+            bottom: 100px;
+            transition: all .4s;
+        }
+    }
+}
