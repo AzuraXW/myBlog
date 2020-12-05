@@ -8,7 +8,6 @@ $(function(){
     });
 
     typing();
-    goup();
 });
 
 function typing() {
@@ -51,30 +50,4 @@ function typing() {
             }
         }, 100);
     }
-}
-
-function goup() {
-    let scrollTmp;
-    window.addEventListener("scroll", function() {
-        scrollTmp = document.documentElement.scrollTop||document.body.scrollTop;
-        if(scrollTmp !== 0) {
-            $('.goup').removeClass('fadeout').addClass('fadein');
-            $(".goup").css({
-                cursor: 'pointer'
-            });
-        } else {
-            $(".goup").removeClass('fadein').addClass('fadeout');
-            $(".goup").css({
-                cursor: 'default'
-            });
-        }
-    })
-    $('.goup').click(function(e) {
-        if(scrollTmp === 0) {
-            return;
-        }
-        $('html, body').animate({
-            scrollTop: '0'
-        });
-    })
 }

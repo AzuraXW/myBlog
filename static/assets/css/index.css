@@ -95,12 +95,6 @@ body {
   font-weight: 300;
 }
 
-.grey-bg {
-  background: #f6f6f6;
-  padding: 120px 0;
-  display: block;
-}
-
 #latest .content-right {
   padding-top: 10px;
 }
@@ -147,6 +141,16 @@ body {
   right: -1px;
   bottom: 0;
   transform-origin: 100% 0;
+}
+
+.thumb-item-wrap .date {
+  display: flex;
+  align-items: center;
+}
+
+.thumb-item-wrap .date span {
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .thumb-item-wrap .content {
@@ -278,13 +282,6 @@ body {
 
 #frontend-nwes .img-box img {
   width: 100%;
-}
-
-#footer {
-  width: 100%;
-  background: #2f2f2f;
-  padding: 80px 0;
-  color: #636363;
 }
 
 @media (max-width: 767.98px) {

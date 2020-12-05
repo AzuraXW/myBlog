@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的博客</title>
+    <title>个人博客-首页</title>
     <%- include('./layout/commonStyle.ejs') -%>
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.css">
@@ -102,97 +102,32 @@
           <div class="col-md-9 content-right pl-md-5">
             <div class="container-fluid">
               <div class="row">
-                <div class="col-sm-6">
-                  <div class="thumb-item-wrap border">
-                    <div class="content">
-                      <h4 class="thumb-title">浅析Vue源码</h4>
-                      <p class="date">2020-11-25</p>
-                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
-                      <hr>
-                      <p class="text-detail">
-                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
-                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
-                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
-                        做相应的更新，充分发挥电子书的优势。
-                      </p>
-                      <p class="more">
-                        <a href="#">阅读更多</a>
-                        <svg class="allow-right" width="20" height="20" fill="currentColor">
-                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
-                        </svg>
-                      </p>
+                <% list.slice(0, 4).forEach(item => { %>
+                  <div class="col-sm-6">
+                    <div class="thumb-item-wrap border">
+                      <div class="content">
+                        <h4 class="thumb-title"><%= item.title %> </h4>
+                        <p class="date">
+                          <svg width="15" height="15" fill="currentColor">
+                            <use xlink:href="assets/svg/bootstrap-icons.svg#calendar4-week"/>
+                          </svg>
+                          <span><%= item.time.toLocaleString() %></span>
+                        </p>
+                        <p><span class="tag"><%= item.category %> </span></p>
+                        <hr>
+                        <p class="text-detail">
+                          <%= item.content.replace(/<[^>]+>/g, '').substring(0, 100) %>
+                        </p>
+                        <p class="more">
+                          <a href="#">阅读更多</a>
+                          <svg class="allow-right" width="20" height="20" fill="currentColor">
+                            <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                          </svg>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div class="col-sm-6">
-                  <div class="thumb-item-wrap border">
-                    <div class="content">
-                      <h4 class="thumb-title">浅析Vue源码</h4>
-                      <p class="date">2020-11-25</p>
-                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
-                      <hr>
-                      <p class="text-detail">
-                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
-                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
-                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
-                        做相应的更新，充分发挥电子书的优势。
-                      </p>
-                      <p class="more">
-                        <a href="#">阅读更多</a>
-                        <svg class="allow-right" width="20" height="20" fill="currentColor">
-                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6">
-                  <div class="thumb-item-wrap border">
-                    <div class="content">
-                      <h4 class="thumb-title">浅析Vue源码</h4>
-                      <p class="date">2020-11-25</p>
-                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
-                      <hr>
-                      <p class="text-detail">
-                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
-                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
-                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
-                        做相应的更新，充分发挥电子书的优势。
-                      </p>
-                      <p class="more">
-                        <a href="#">阅读更多</a>
-                        <svg class="allow-right" width="20" height="20" fill="currentColor">
-                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm-6">
-                  <div class="thumb-item-wrap border">
-                    <div class="content">
-                      <h4 class="thumb-title">浅析Vue源码</h4>
-                      <p class="date">2020-11-25</p>
-                      <p><span class="tag">Vue</span><span class="tag">JavaScript</span></p>
-                      <hr>
-                      <p class="text-detail">
-                        目前社区有很多 Vue.js 的源码解析文章，但是质量层次不齐，不够系统和全面，
-                        这本电子书的目标是全方位细致深度解析 Vue.js 的实现原理，让同学们可以彻底掌握 Vue.js。
-                        目前分析的版本是 Vue.js 的最新版本 Vue.js 2.5.17-beta.0，并且之后会随着版本升级而
-                        做相应的更新，充分发挥电子书的优势。
-                      </p>
-                      <p class="more">
-                        <a href="#">阅读更多</a>
-                        <svg class="allow-right" width="20" height="20" fill="currentColor">
-                          <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
-                        </svg>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <% }) %>
 
               </div>
             </div>
@@ -316,6 +251,53 @@
       </div>
     </section>
     <!-- 前端要闻结束 -->
+
+    <!-- 热门推荐博文 -->
+    <section id="hots" class="grey-bg">
+      <div class="container-xl">
+        <div class="row no-gutters">
+          <div class="hot-title container-fluid row align-items-center flex-column">
+            <h3 class="title-samll">
+              <span>热门推荐</span>
+            </h3>
+            <p>
+              用心写好每一行代码，用时间和精力钻研每一项技术。沉淀知识，积累技术。
+            </p>
+          </div>
+            <div class="container-fluid">
+              <div class="row">
+                <% hots.slice(0, 4).forEach(hots => { %>
+                  <div class="col-md-4 col-sm-6">
+                    <div class="thumb-item-wrap border">
+                      <div class="content">
+                        <h4 class="thumb-title"><%= hots.title %> </h4>
+                        <p class="date">
+                          <svg class="allow-right" width="15" height="15" fill="currentColor">
+                            <use xlink:href="assets/svg/bootstrap-icons.svg#calendar4-week"/>
+                          </svg>
+                          <span><%= hots.time.toLocaleString() %></span>
+                        </p>
+                        <p><span class="tag"><%= hots.category %> </span></p>
+                        <hr>
+                        <p class="text-detail">
+                          <%= hots.content.replace(/<[^>]+>/g, '').substring(0, 100) %>
+                        </p>
+                        <p class="more">
+                          <a href="#">阅读更多</a>
+                          <svg class="allow-right" width="20" height="20" fill="currentColor">
+                            <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
+                          </svg>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                <% }) %>
+
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- 底部 -->

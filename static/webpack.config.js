@@ -5,7 +5,8 @@ module.exports = {
   mode: 'production',
   entry: {
     index: path.resolve(__dirname, './src/index.js'),
-    common: path.resolve(__dirname, './src/common.js')
+    common: path.resolve(__dirname, './src/common.js'),
+    blog: path.resolve(__dirname, './src/blog.js'),
   },
   output: {
     path: path.resolve(__dirname, './js'),

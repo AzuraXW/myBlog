@@ -84,11 +84,6 @@ body{
         }
     }
 }
-.grey-bg{
-    background: #f6f6f6;
-    padding: 120px 0;
-    display: block;
-}
 
 // 最新博文
 #latest{
@@ -132,6 +127,14 @@ body{
         right: -1px;
         bottom: 0;
         transform-origin: 100% 0;
+    }
+    .date{
+        display: flex;
+        align-items: center;
+        span{
+            display: inline-block;
+            margin-left: 10px;
+        }
     }
     .content{
         position: relative;
@@ -250,14 +253,6 @@ body{
         }
     }
 }
-
-#footer{
-    width: 100%;
-    background: #2f2f2f;
-    padding: 80px 0;
-    color: #636363;
-}
-
 @media (max-width: 767.98px) { 
     .row-reverse{
         flex-direction: column-reverse;

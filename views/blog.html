@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><% if (pathname === '/') { %>
+      <%= !k ? '文章分类-全部分类' : '文章搜索：' + k  %> 
+      <% } else if (id) { %>
+      <%= '文章分类-' + CategoryList.find(function(category){
+        return category['category_id'] == id
+      }).name %>
+    <% } %></title>
+    <%- include('./layout/commonStyle.ejs') -%>
+    <link rel="stylesheet" href="/assets/css/blog.css">
+    <link rel="stylesheet" href="/assets/css/iconfont.css">
+</head>
+<body>
+  <!-- 导航开始 -->
+    <%- include('./layout/nav.ejs') -%>
+  <!-- 导航结束 -->
+
+  <main id="main">
+    <header class="header">
+      <div class="container-xl">
+        <h1><% if (!k) { %>
+          这里都是技术文章哦
+        <% } else { %>
+          搜索的关键字为: <%= k %> , 共 <%= totalPageResult.total %> 条结果
+        <% } %>
+        </h1>
+        <% if (!k) { %>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb" style="padding: 12px 0;background-color: transparent;border: none;">
+              <li class="breadcrumb-item"><a href="/">首页</a></li>
+              <li class="breadcrumb-item"><a href="/blog">博客</a></li>
+              <% if (pathname === '/') { %>
+                <li class="breadcrumb-item active" aria-current="page">全部分类</li>
+              <% } else if (id) { %>
+                <li class="breadcrumb-item active" aria-current="page">当前分类: <%= CategoryList.find(function(category){
+                  return category['category_id'] == id
+                }).name %>  </li>
+              <% } %>
+            </ol>
+          </nav>
+        <% } %>
+      </div>
+    </header>
+
+    <section class="content">
+      <div class="container-xl">
+        <div class="row">
+          <div class="row <%= !k ? 'col-md-9' : 'col-12' %>  no-gutters">
+            <ul class="post-list">
+              <% list.forEach(blog => { %>
+                <li>
+                  <div class="blog-item">
+                    <p class="item-header">
+                      <svg class="allow-right" width="15" height="15" fill="currentColor">
+                        <use xlink:href="/assets/svg/bootstrap-icons.svg#calendar4-week"/>
+                      </svg>
+                      <span>
+                        <%= blog.time.toLocaleString() %>
+                      </span>
+                    </p>
+                    <h4>
+                      <a href="#"><%= blog.title %></a>
+                    </h4>
+                    <p class="des"><span><%= blog.content.replace(/<[^>]+>/g, '').substring(0, 150) + '...' %></span></p>
+                    <p class="item-footer">
+                      <a href="<%= '/blog/category/' + blog['category_id'] %> "><i class="iconfont <%= blog['category_icon'] %> "></i><span><%= blog.category %> </span></a>
+                    </p>
+                    <div class="hr-line-dashed"></div>
+                  </div>
+                </li>
+              <% }) %>
+
+              <% if (p == totalPageResult.totalPage) { %>
+                <li class="no-more">没有更多的数据了...</li>
+              <% } %>
+            </ul>
+            <div class="page-control container-fluid">
+              <a class="page-btn left <%=p == 1 ? 'disabled' : ''%>" 
+                href="<%= !k ? '?' : `/search?k=${k}` + '&' %>p=<%= p <= 1 ? 1 : p - 1 %>"
+              >
+                <svg class="allow-right" width="15" height="15" fill="currentColor">
+                  <use xlink:href="/assets/svg/bootstrap-icons.svg#chevron-left"/>
+                </svg>
+                <span>上一页</span>
+              </a>
+              <a class="page-btn right <%=p == totalPageResult.totalPage ? 'disabled' : ''%>" 
+                href="<%= !k ? '?' : `/search?k=${k}` + '&' %>p=<%= p >= totalPageResult.totalPage ? totalPageResult.totalPage === 0 ? 1 : totalPageResult.totalPage : parseInt(p) + 1 %>"
+              >
+                <span>下一页</span>
+                <svg class="allow-right" width="15" height="15" fill="currentColor">
+                  <use xlink:href="/assets/svg/bootstrap-icons.svg#chevron-right"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- 侧边栏 -->
+          <% if (!k) { %>
+            <div class="row col-md-3 no-gutters">
+              <aside class="right-content">
+                <div class="aside-item category">
+                  <h4>分类</h4>
+                  <ul class="list">
+                    <% CategoryList.forEach(category => { %>
+                      <li><a href="<%= '/blog/category/' + category['category_id'] %>" class="<% if (id == category['category_id']) { %><%= 'active' %><% } %>"><%= category.name %> </a></li>
+                    <% }) %>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          <% } %>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部 -->
+  <%- include('./layout/footer.ejs') -%>
+
+  <!-- 工具按钮 -->
+  <%- include('./components/toolGroup.ejs') -%>
+
+  <!-- 公共脚本 -->
+  <%- include('./layout/commonScript.ejs') -%>
+
+  <script src="/js/blog.js"></script>
+  <script src="/js/common.js"></script>
+  
+</body>
+</html>

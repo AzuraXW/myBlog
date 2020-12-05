@@ -10,10 +10,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">首页 <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">博客</a>
+          <a class="nav-link" href="/blog">博客</a>
         </li>
         <li class="nav-item">
           <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -28,12 +28,12 @@
           <a class="nav-link" href="#">视频</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
+      <form class="form-inline my-2 my-lg-0" action="/search" method="GET">
         <div class="search-box">
-          <input class="search-input" type="search" aria-label="Search">
+          <input class="search-input" type="search" aria-label="Search" name="k" autocomplete="off" required>
           <button type="submit" class="search-btn">
             <svg class="allow-right" width="20" height="20" fill="currentColor">
-              <use xlink:href="assets/svg/bootstrap-icons.svg#search"/>
+              <use xlink:href="/assets/svg/bootstrap-icons.svg#search"/>
             </svg>
           </button>
         </div>
