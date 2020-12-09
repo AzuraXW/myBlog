@@ -63,7 +63,7 @@
                       </span>
                     </p>
                     <h4>
-                      <a href="#"><%= blog.title %></a>
+                      <a href="/article/<%= blog.id %> "><%= blog.title %></a>
                     </h4>
                     <p class="des"><span><%= blog.content.replace(/<[^>]+>/g, '').substring(0, 150) + '...' %></span></p>
                     <p class="item-footer">
@@ -79,16 +79,16 @@
               <% } %>
             </ul>
             <div class="page-control container-fluid">
-              <a class="page-btn left <%=p == 1 ? 'disabled' : ''%>" 
-                href="<%= !k ? '?' : `/search?k=${k}` + '&' %>p=<%= p <= 1 ? 1 : p - 1 %>"
+              <a class="page-btn left <%= pageHref.prevBtnDisabled ? 'disabled' : ''%>" 
+                href="<%= pageHref.prev %>"
               >
                 <svg class="allow-right" width="15" height="15" fill="currentColor">
                   <use xlink:href="/assets/svg/bootstrap-icons.svg#chevron-left"/>
                 </svg>
                 <span>上一页</span>
               </a>
-              <a class="page-btn right <%=p == totalPageResult.totalPage ? 'disabled' : ''%>" 
-                href="<%= !k ? '?' : `/search?k=${k}` + '&' %>p=<%= p >= totalPageResult.totalPage ? totalPageResult.totalPage === 0 ? 1 : totalPageResult.totalPage : parseInt(p) + 1 %>"
+              <a class="page-btn right <%= pageHref.nextBtnDisabled ? 'disabled' : ''%>" 
+                href="<%= pageHref.next %>"
               >
                 <span>下一页</span>
                 <svg class="allow-right" width="15" height="15" fill="currentColor">

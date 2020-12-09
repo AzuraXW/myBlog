@@ -1,3 +1,9 @@
+:root {
+  --black: #000000;
+  --gray-bg: #f6f6f6;
+  --text-color: #555555;
+}
+
 p {
   color: #555555;
 }
@@ -191,6 +197,7 @@ input[type=search]::-webkit-search-cancel-button {
   margin-left: auto;
   position: relative;
   color: #619ac3;
+  font-size: 14px;
   text-decoration: none;
 }
 

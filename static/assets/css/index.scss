@@ -97,7 +97,7 @@ body{
     background-color: #fff;
     position: relative;
     &:hover{
-        box-shadow: 20px 20px 0px #818181;
+        box-shadow: 20px 20px 0px #4C93B3;
         transform: translateY(-10px) translateX(-10px);
         transition: all 0.2s ease 0.4s;
     }
@@ -113,7 +113,7 @@ body{
         content: "";
         width: 3px;
         height: 100%;
-        background: #818181;
+        background: #4C93B3;
         transform: scaleY(0);
         transition: all 0.2s ease 0.2s;
         z-index: 111;
@@ -148,7 +148,7 @@ body{
             content: "";
             width: 100%;
             height: 3px;
-            background: #818181;
+            background: #4C93B3;
             transform: scaleX(0);
             transition: all 0.2s ease 0.2s;
             z-index: 111;
@@ -190,6 +190,7 @@ body{
 #motto{
     min-height: 300px;
     background-size: cover;
+    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -106,12 +106,12 @@
                   <div class="col-sm-6">
                     <div class="thumb-item-wrap border">
                       <div class="content">
-                        <h4 class="thumb-title"><%= item.title %> </h4>
+                        <h4 class="thumb-title"><%= item.title %></h4>
                         <p class="date">
                           <svg width="15" height="15" fill="currentColor">
                             <use xlink:href="assets/svg/bootstrap-icons.svg#calendar4-week"/>
                           </svg>
-                          <span><%= item.time.toLocaleString() %></span>
+                          <span><%= item.time %></span>
                         </p>
                         <p><span class="tag"><%= item.category %> </span></p>
                         <hr>
@@ -119,7 +119,7 @@
                           <%= item.content.replace(/<[^>]+>/g, '').substring(0, 100) %>
                         </p>
                         <p class="more">
-                          <a href="#">阅读更多</a>
+                          <a href="/article/<%= item.id %>">阅读更多</a>
                           <svg class="allow-right" width="20" height="20" fill="currentColor">
                             <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
                           </svg>
@@ -270,12 +270,12 @@
                   <div class="col-md-4 col-sm-6">
                     <div class="thumb-item-wrap border">
                       <div class="content">
-                        <h4 class="thumb-title"><%= hots.title %> </h4>
+                        <h4 class="thumb-title"><%= hots.title %></h4>
                         <p class="date">
                           <svg class="allow-right" width="15" height="15" fill="currentColor">
                             <use xlink:href="assets/svg/bootstrap-icons.svg#calendar4-week"/>
                           </svg>
-                          <span><%= hots.time.toLocaleString() %></span>
+                          <span><%= hots.time %></span>
                         </p>
                         <p><span class="tag"><%= hots.category %> </span></p>
                         <hr>
@@ -283,7 +283,7 @@
                           <%= hots.content.replace(/<[^>]+>/g, '').substring(0, 100) %>
                         </p>
                         <p class="more">
-                          <a href="#">阅读更多</a>
+                          <a href="/article/<%= hots.id %>">阅读更多</a>
                           <svg class="allow-right" width="20" height="20" fill="currentColor">
                             <use xlink:href="assets/svg/bootstrap-icons.svg#arrow-right-short"/>
                           </svg>

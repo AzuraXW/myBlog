@@ -3,14 +3,14 @@
 */
 
 const express = require('express')
-const article = require('../middleware/blog')
+const indexApp = express.Router()
 
-const indexApp = express()
+const blog = require('../middleware/blog')
 
 // 主页路由
-indexApp.get('/', [article.getHot, article.getList], (req, res) => {
-  let {hots, list} = req
-  res.render('index', {hots, list})
+indexApp.get('/', [blog.getHot, blog.getListByCategoryPagination], (req, res) => {
+  const { hots, list } = req
+  res.render('index', { hots, list })
 })
 
 module.exports = indexApp

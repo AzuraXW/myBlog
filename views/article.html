@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= article.title %> </title>
+    <%- include('./layout/commonStyle.ejs') -%>
+    <link rel="stylesheet" href="/assets/css/article.min.css">
+    <link rel="stylesheet" href="/assets/css/base-theme.css">
+    <link rel="stylesheet" href="/assets/css/code-theme.css">
+</head>
+<body>
+  <!-- 导航开始 -->
+    <%- include('./layout/nav.ejs') -%>
+  <!-- 导航结束 -->
+    
+  <main id="main">
+    <div class="container-xl">
+      <div class="row">
+        <article class="col-md-9 article">
+          <div class="content">
+            <h1><%= article.title %> </h1>
+            <section id="nice">
+              <%- article.content %> 
+            </section>
+          </div>
+          <div class="page-control container-fluid">
+            <a class="page-btn left <%= prevArticle.id === '#' ? 'disabled' : ''%>" 
+              href="<%= prevArticle.id %>"
+              title="<%= prevArticle.title %>"
+            >
+              <svg class="allow-right" width="15" height="15" fill="currentColor">
+                <use xlink:href="/assets/svg/bootstrap-icons.svg#chevron-left"/>
+              </svg>
+              <span><%= prevArticle.title %></span>
+            </a>
+            <a class="page-btn right <%= nextArticle.id === '#' ? 'disabled' : ''%>" 
+              href="<%= nextArticle.id %>"
+              title="<%= nextArticle.title %>"
+            >
+              <span><%= nextArticle.title %></span>
+              <svg class="allow-right" width="15" height="15" fill="currentColor">
+                <use xlink:href="/assets/svg/bootstrap-icons.svg#chevron-right"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <aside class="aside col-md-3">
+          <div class="aside-item article-msg">
+            <h4>文章信息</h4>
+            <ul>
+              <li><span class="text">发表时间</span> <span class="value"><%= article.time %></span> </li>
+              <li><span class="text">所属分类</span><span class="value"><%= article.category %></span></li>
+              <li><span class="text">点击量</span> <span class="value"><%= article.hits %></span></li>
+              <li><span class="text">评论数</span><span class="value">99</span></li>
+            </ul>
+          </div>
+          <div class="aside-item catalog">
+            <h4>目录</h4>
+            <ul>
+              <li> <a href="#">标题一</a> </li>
+              <li> <a href="#">标题一</a> </li>
+              <li> <a href="#">标题一</a> </li>
+              <li> <a href="#">标题一</a> </li>
+              <li> <a href="#">标题一</a> </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- 底部 -->
+  <%- include('./layout/footer.ejs') -%>
+
+  <!-- 工具按钮 -->
+  <%- include('./components/toolGroup.ejs') -%>
+
+  <!-- 公共脚本 -->
+  <%- include('./layout/commonScript.ejs') -%>
+
+  <script src="assets/plugins/owl.carousel.min.js"></script>
+  <script src="js/index.js"></script>
+  
+</body>
+</html>
