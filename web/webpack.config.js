@@ -9,7 +9,7 @@ module.exports = {
     blog: path.resolve(__dirname, './src/blog.js'),
   },
   output: {
-    path: path.resolve(__dirname, './js'),
+    path: path.resolve(__dirname, '../static/js'),
     filename: './[name].js'
   },
   module: {
@@ -50,6 +50,13 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.(tpl|ejs)$/,
+        loader: 'ejs-loader',
+        options: {
+          esModule: false
+        }
       }
     ]
   },

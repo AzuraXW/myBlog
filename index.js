@@ -36,4 +36,6 @@ app.use(function (req, res) {
   res.status(404).render('404')
 })
 
-app.listen(8087)
+app.listen(8087, function(){
+  console.log('server running on localhost:8087')
+})
