@@ -5,12 +5,15 @@ $(function(){
     goup();
     currentNavItemAcitve();
     openLoginDialog();
+    formLogin();
 })
 
 $('.navbar-toggler').click(function(e) {
     e.preventDefault();
     $(this).toggleClass('close');
 })
+
+let loginStatus = false
 
 /**
  * 根据页面滚动给顶部导航栏添加样式
@@ -66,11 +69,10 @@ function currentNavItemAcitve() {
 }
 
 function validateLogin(form) {
-    console.log(form, form.validate)
     form.validate({
         // 验证规则
         rules: {
-            user: {
+            username: {
                 required : true
             },
             password: {
@@ -79,16 +81,12 @@ function validateLogin(form) {
         },
         // 错误消息
         messages: {
-            user: {
+            username: {
                 required : '用户名不得为空'
             },
             password: {
                 required : '密码不得为空'
             }
-        },
-        // 自定义提交
-        submitHandler() {
-            console.log('验证通过')
         }
     })
 }
@@ -111,14 +109,31 @@ function openLoginDialog() {
                 }
             },
             aftershow: function(){
-                
+                formLogin()
             },
             onok: function(e) {
                 // 登录按钮
                 validateLogin($('#login-form'))
                 $('#login-form').eq(0).submit()
-                return false;
+                return loginStatus;
             }
         });
+    })
+}
+
+function formLogin() {
+    $('#login-form').submit(function(e) {
+        e.preventDefault()
+        $.post('/api/1/login', {
+            username: $("#login-form input[name='username']").val(),
+            password: $("#login-form input[name='password']").val()
+        }, res => {
+            if(res.success) {
+                loginStatus = true
+                xdialog.alert('登录成功')
+            } else {
+                xdialog.alert('登录失败')
+            }
+        })
     })
 }

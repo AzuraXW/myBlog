@@ -90,7 +90,6 @@ module.exports = class Blog extends Model {
             }
             this.query(sql).then((results) => {
                 results = handleTimeFormat(results, 'time')
-                console.log(results)
                 resolve(results);
             }).catch(err => {
                 console.error("获取分页列表失败:"+ err.message)

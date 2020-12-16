@@ -4,7 +4,7 @@
 const express = require('express')
 // 引入日志中间件
 const morgan = require('morgan')
-
+const bodyParser = require('body-parser')
 // 创建主应用
 const app = express()
 
@@ -20,11 +20,14 @@ app.use(express.static('static'))
 const morganMiddleware  = morgan('short')
 app.use(morganMiddleware)
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 // 调用中间件
 app.use(/\/(index)?/, require('./router/index'))
 app.use('/blog', require('./router/blog'))
 app.use('/search', require('./router/search'))
 app.use('/article', require('./router/article'))
+app.use('/api', require('./router/api'))
 
 // 如果没有匹配的路由就重定向到404页面
 // app.use(function (req, res) {
